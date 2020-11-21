@@ -1,0 +1,36 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="all,follow" />
+    {% block header %} {% endblock %}
+    <link href="{% static 'css/style-white.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/all.min.css' %}" rel="stylesheet" />
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body class="max-width mx-auto px3 ltr">
+    <div class="content index py4">
+      <header id="header">
+        <a href="https://themes.gohugo.io//theme/hugo-theme-cactus/">
+          <div id="logo" style="background-image: url({% static 'img/logo.png' %})"></div>
+          <div id="title">
+            <h1>Cactus theme example</h1>
+          </div>
+        </a>
+        <div id="nav">{% include 'layouts/nav.html' %}</div>
+      </header>
+
+      <div id="main" class="wrapper">{% block content %} {% endblock %}</div>
+
+      <footer id="footer">{% include 'layouts/footer.html' %}</footer>
+    </div>
+  </body>
+</html>
